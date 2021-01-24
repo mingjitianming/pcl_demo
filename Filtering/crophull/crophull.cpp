@@ -39,7 +39,7 @@ int main(int argc, char** argv)
 	std::cout << objects->size() << std::endl;
 
 	//visualize
-	boost::shared_ptr<pcl::visualization::PCLVisualizer> for_visualizer_v (new pcl::visualization::PCLVisualizer ("crophull display"));
+	std::shared_ptr<pcl::visualization::PCLVisualizer> for_visualizer_v (new pcl::visualization::PCLVisualizer ("crophull display"));
 	for_visualizer_v->setBackgroundColor(255,255,255);
 
 	int v1(0);

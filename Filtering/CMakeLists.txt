@@ -1,22 +1,22 @@
 #编译器版本限制
-cmake_minimum_required( VERSION 2.8 )
+cmake_minimum_required(VERSION 2.8)
 
 #工程名
-project( pcl_filter )
+project(pcl_filter)
 
 #模式
-set( CMAKE_BUILD_TYPE Release )
+set(CMAKE_BUILD_TYPE Release)
 # 添加c++ 11标准支持
-set( CMAKE_CXX_FLAGS "-std=c++11 -O3" )
+set(CMAKE_CXX_FLAGS "-std=c++11 -O3")
 
 #找 pcl 并链接 
 #注意　common io filters visualization　分别为其子模块，
 # 使用到子模块的需要添加相应的子模块
-find_package( PCL REQUIRED COMPONENT common io filters visualization segmentation)
-include_directories( ${PCL_INCLUDE_DIRS} )
+find_package(PCL REQUIRED COMPONENT common io filters visualization segmentation)
+include_directories(${PCL_INCLUDE_DIRS})
 include_directories("/opt/ros/melodic/include/pcl_conversions")
 link_directories(${PCL_LIBRARY_DIRS})
-add_definitions( ${PCL_DEFINITIONS} )
+add_definitions(${PCL_DEFINITIONS})
 
 message("pcl_conversions include: ${PCL_CONVERSIONS_INCLOUDE_DIRS}")
 
